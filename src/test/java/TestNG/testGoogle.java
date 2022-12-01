@@ -16,12 +16,12 @@ public class testGoogle {
 
     @Test
     public void searchSomething(){
-        WebElement searchField = driver.findElement(By.name("q"));
+        WebElement searchField = driver.findElement(By.xpath("//div[@class=\"search_wrapper\"]/input[@name=\"q\"]"));
         searchField.isDisplayed();
-        searchField.sendKeys("Persian");
+        searchField.sendKeys("Tomyris");
         searchField.sendKeys(Keys.ENTER);
 
-        WebElement validationField = driver.findElement(By.xpath("//div[@class=\"search_wrapper\"]/input[@value=\"Persian\"]"));
+        WebElement validationField = driver.findElement(By.xpath("//div[@class =\"box_wrapper v_spacing\"]/h1[@id='page_title_text' and text() = \"Search Results: Tomyris\"]"));
         validationField.isDisplayed();
     }
 
