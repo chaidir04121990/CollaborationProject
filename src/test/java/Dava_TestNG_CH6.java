@@ -77,6 +77,8 @@ public class Dava_TestNG_CH6 {
 
     @Test
     public void testfunc(){
+//        this function is used to open file named "credentials" with real email and password
+//        "credentials" file is included into git.ignore so it will not be pushed to repo
         try {
             WebElement login_button = driver.findElement(By.xpath("/html/body/div[1]/div[5]/div/header/div/div/nav/div"));
             login_button.click();
@@ -95,6 +97,7 @@ public class Dava_TestNG_CH6 {
             input_password.isDisplayed();
             input_password.clear();
 
+//            put email and password from "credentials" file
             input_email.sendKeys(list_cred.get(0));
             input_password.sendKeys(list_cred.get(1));
 
