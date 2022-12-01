@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties" : {
+    "data" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "minimum" : 1,
+          "maximum" : 100
+        },
+        "email" : {
+          "type" : "string",
+          "minLength" : 0,
+          "maxLength" : 300
+        },
+        "year" : {
+          "type" : "integer",
+          "minLength" : 0,
+          "maxLength" : 100
+        },
+        "color" : {
+          "type" : "string",
+          "minLength" : 0,
+          "maxLength" : 300
+        },
+        "pantone_value" : {
+          "type" : "string",
+          "minLength" : 0,
+          "maxLength" : 300
+        }
+      },
+      "required" : [
+        "id",
+        "name",
+        "year",
+        "color",
+        "pantone_value"
+      ]
+    },
+    "support" : {
+      "type" : "object",
+      "properties" : {
+        "url" : {
+          "type" : "string",
+          "minLength" : 0,
+          "maxLength" : 300
+        },
+        "text" : {
+          "type" : "string",
+          "minLength" : 0,
+          "maxLength" : 300
+        }
+      },
+      "required" : [
+        "url",
+        "text"
+      ]
+    }
+  },
+  "required": [
+    "data",
+    "support"
+  ]
+}

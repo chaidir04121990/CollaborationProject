@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties" : {
+    "id" : {
+      "type" : "integer",
+      "minLength" : 0,
+      "maxLength" : 100
+    },
+    "token" : {
+      "type" : "string",
+      "minLength" : 0,
+      "maxLength" : 300
+    }
+  },
+  "required": [
+    "id",
+    "token"
+  ]
+}

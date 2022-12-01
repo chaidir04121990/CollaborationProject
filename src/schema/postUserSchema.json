@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties" : {
+    "id" : {
+      "type" : "string",
+      "minLength" : 0,
+      "maxLength" : 300
+    },
+    "createdAt" : {
+      "type" : "string",
+      "minLength" : 0,
+      "maxLength" : 300
+    }
+  },
+  "required": [
+    "id",
+    "createdAt"
+  ]
+}

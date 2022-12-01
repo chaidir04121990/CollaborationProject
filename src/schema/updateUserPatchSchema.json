@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties" : {
+    "name" : {
+      "type" : "string",
+      "minLength" : 0,
+      "maxLength" : 300
+    },
+    "job" : {
+      "type" : "string",
+      "minLength" : 0,
+      "maxLength" : 300
+    },
+    "updatedAt" : {
+      "type" : "string",
+      "minLength" : 0,
+      "maxLength" : 300
+    }
+  },
+  "required": [
+    "name",
+    "job",
+    "updatedAt"
+  ]
+}
