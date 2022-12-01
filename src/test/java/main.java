@@ -13,6 +13,7 @@ public class main extends config {
         // Open Web
         driver.get(url);
 
+
         // Click Method Button
         WebElement methodButton = driver.findElement(By.xpath(methodButtonXPath+"[1]/a"));
         methodButton.click();
