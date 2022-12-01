@@ -1,23 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="D:/All Project/Challenge-Chapter-6">
-        <classes>
-            <class name="Tugas2_TestNG_RestAssuredReqres.GetRequest">
-                <methods><include name="testGetRequest1"/><include name="testGetRequest2"/></methods>
-            </class>
-            <class name="Tugas2_TestNG_RestAssuredReqres.PatchRequest">
-                <methods><include name="testPatchRequest"/></methods>
-            </class>
-            <class name="Tugas2_TestNG_RestAssuredReqres.PostRequest">
-                <methods><include name="testPostRequest"/></methods>
-            </class>
-            <class name="Tugas2_TestNG_RestAssuredReqres.PutRequest">
-                <methods><include name="testPutRequest"/></methods>
-            </class>
-            <class name="Tugas2_TestNG_RestAssuredReqres.DeleteRequest">
-                <methods><include name="testDeleteRequest"/></methods>
-            </class>
-        </classes>
-    </test>
-</suite>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite"><test verbose="2" preserve-order="true" name="D:/All Project/Challenge-Chapter-6"><classes><class name="Tugas2_TestNG_RestAssuredReqres.TangkasWahyu_RestAssured"><methods><include name="testGetRequest1"/><include name="testGetRequest2"/><include name="testPostRequest"/><include name="testPutRequest"/><include name="testPatchRequest"/><include name="testDeleteRequest"/></methods></class></classes></test></suite>
