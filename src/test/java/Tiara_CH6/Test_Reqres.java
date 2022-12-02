@@ -121,5 +121,6 @@ public class Test_Reqres {
 
         System.out.println(response.asPrettyString());
         response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("src/test/resources/schema/schema.json"));
+        // json schema ini masih error gatau kenapa
     }
 }
