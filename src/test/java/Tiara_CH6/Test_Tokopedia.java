@@ -18,17 +18,17 @@ public class Test_Tokopedia {
 
     String baseURL = "https://www.tokopedia.com/";
 
-    @Test
-    public void Search_item(){
-        WebElement searchItem = driver.findElement(By.xpath("//div[@class = \"css-4txsjy e1v32nag0\"]/input"));
-        searchItem.isDisplayed();
-        searchItem.sendKeys("jam tangan");
-        searchItem.sendKeys(Keys.ENTER);
-
-        //validasi change page
-        WebElement itemList = driver.findElement(By.xpath("//div[@class = \"css-1yus67o\"]/button[1]"));
-        itemList.isDisplayed();
-    }
+//    @Test
+//    public void Search_item(){
+//        WebElement searchItem = driver.findElement(By.xpath("//div[@class = \"css-4txsjy e1v32nag0\"]/input"));
+//        searchItem.isDisplayed();
+//        searchItem.sendKeys("jam tangan");
+//        searchItem.sendKeys(Keys.ENTER);
+//
+//        //validasi change page
+//        WebElement itemList = driver.findElement(By.xpath("//div[@class = \"css-1yus67o\"]/button[1]"));
+//        itemList.isDisplayed();
+//    }
 
     @Test
     public void Train_ticket(){
@@ -50,31 +50,31 @@ public class Test_Tokopedia {
         originYK.isDisplayed();
         originYK.click();
 
-        //Memilih tujuan
-        WebElement destination = driver.findElement(By.xpath("//div[@class=\"location\"]/div[3]/input"));
-        destination.isDisplayed();
-        destination.click();
-        destination.sendKeys("Kutoarjo");
-
-        WebElement destinationKTA = driver.findElement(By.xpath("//div[@class=\"css-1m10txy\"]/div[2]"));
-        destinationKTA.isDisplayed();
-        destinationKTA.click();
+//        //Memilih tujuan
+//        WebElement destination = driver.findElement(By.xpath("//div[@class=\"location\"]/div[3]/input"));
+//        destination.isDisplayed();
+//        destination.click();
+//        destination.sendKeys("Kutoarjo");
+//
+//        WebElement destinationKTA = driver.findElement(By.xpath("//div[@class=\"css-1m10txy\"]/div[3]"));
+//        destinationKTA.isDisplayed();
+//        destinationKTA.click();
 
 //        //Memilih tanggal
 //        WebElement date = driver.findElement(By.xpath("//div[@class=\"location\"]/div[3]"));
 //        date.isDisplayed();
 //        date.sendKeys("03 Jan 2023");
 
-        WebElement findTicket = driver.findElement(By.xpath("//div[@class=\"css-wkfdkq\"]"));
-        findTicket.isDisplayed();
-        findTicket.click();
-
-        WebElement buyTicket = driver.findElement(By.xpath("//div[@class=\"css-1yr2zok\"]/button[1]"));
-        buyTicket.isDisplayed();
-        buyTicket.click();
-
-        WebElement loginPage = driver.findElement(By.xpath("//div[@class=\"css-9z1sps\"]"));
-        loginPage.isDisplayed();
+//        WebElement findTicket = driver.findElement(By.xpath("//div[@class=\"css-wkfdkq\"]"));
+//        findTicket.isDisplayed();
+//        findTicket.click();
+//
+//        WebElement buyTicket = driver.findElement(By.xpath("//div[@class=\"css-1yr2zok\"]/button[1]"));
+//        buyTicket.isDisplayed();
+//        buyTicket.click();
+//
+//        WebElement loginPage = driver.findElement(By.xpath("//div[@class=\"css-9z1sps\"]"));
+//        loginPage.isDisplayed();
     }
 
     @BeforeMethod

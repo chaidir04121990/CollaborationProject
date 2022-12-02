@@ -1,0 +1,155 @@
+{
+	"definitions": {},
+	"$schema": "http://json-schema.org/draft-07/schema#", 
+	"$id": "https://example.com/object1669943369.json", 
+	"title": "Root", 
+	"type": "object",
+	"required": [
+		"page",
+		"per_page",
+		"total",
+		"total_pages",
+		"data",
+		"support"
+	],
+	"properties": {
+		"page": {
+			"$id": "#root/page", 
+			"title": "Page", 
+			"type": "integer",
+			"examples": [
+				1
+			],
+			"default": 0
+		},
+		"per_page": {
+			"$id": "#root/per_page", 
+			"title": "Per_page", 
+			"type": "integer",
+			"examples": [
+				6
+			],
+			"default": 0
+		},
+		"total": {
+			"$id": "#root/total", 
+			"title": "Total", 
+			"type": "integer",
+			"examples": [
+				12
+			],
+			"default": 0
+		},
+		"total_pages": {
+			"$id": "#root/total_pages", 
+			"title": "Total_pages", 
+			"type": "integer",
+			"examples": [
+				2
+			],
+			"default": 0
+		},
+		"data": {
+			"$id": "#root/data", 
+			"title": "Data", 
+			"type": "array",
+			"default": [],
+			"items":{
+				"$id": "#root/data/items", 
+				"title": "Items", 
+				"type": "object",
+				"required": [
+					"id",
+					"email",
+					"first_name",
+					"last_name",
+					"avatar"
+				],
+				"properties": {
+					"id": {
+						"$id": "#root/data/items/id", 
+						"title": "Id", 
+						"type": "integer",
+						"examples": [
+							1
+						],
+						"default": 0
+					},
+					"email": {
+						"$id": "#root/data/items/email", 
+						"title": "Email", 
+						"type": "string",
+						"default": "",
+						"examples": [
+							"george.bluth@reqres.in"
+						],
+						"pattern": "^.*$"
+					},
+					"first_name": {
+						"$id": "#root/data/items/first_name", 
+						"title": "First_name", 
+						"type": "string",
+						"default": "",
+						"examples": [
+							"George"
+						],
+						"pattern": "^.*$"
+					},
+					"last_name": {
+						"$id": "#root/data/items/last_name", 
+						"title": "Last_name", 
+						"type": "string",
+						"default": "",
+						"examples": [
+							"Bluth"
+						],
+						"pattern": "^.*$"
+					},
+					"avatar": {
+						"$id": "#root/data/items/avatar", 
+						"title": "Avatar", 
+						"type": "string",
+						"default": "",
+						"examples": [
+							"https://reqres.in/img/faces/1-image.jpg"
+						],
+						"pattern": "^.*$"
+					}
+				}
+			}
+
+		},
+		"support": {
+			"$id": "#root/support", 
+			"title": "Support", 
+			"type": "object",
+			"required": [
+				"url",
+				"text"
+			],
+			"properties": {
+				"url": {
+					"$id": "#root/support/url", 
+					"title": "Url", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"https://reqres.in/#support-heading"
+					],
+					"pattern": "^.*$"
+				},
+				"text": {
+					"$id": "#root/support/text", 
+					"title": "Text", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"To keep ReqRes free, contributions towards server costs are appreciated!"
+					],
+					"pattern": "^.*$"
+				}
+			}
+		}
+
+	}
+}
