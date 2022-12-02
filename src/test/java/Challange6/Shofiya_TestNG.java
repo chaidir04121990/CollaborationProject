@@ -3,6 +3,7 @@ package Challange6;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -24,17 +25,22 @@ public class Shofiya_TestNG {
     }
 
     @Test
-    public void login(){
-        driver.get("https://www.facebook.com/");
-        WebElement email_field = driver.findElement(By.xpath("//div[@class=\"_6lux\"]/input[@class=\"inputtext _55r1 _6luy\"]"));
-        email_field.isDisplayed();
-        email_field.sendKeys("shofiya@gmail.com");
-        WebElement password_field = driver.findElement(By.xpath("//div[@class=\"@class=\"_6luy _55r1 _1kbt _9nyh\"]"));
-        password_field.isDisplayed();
-        password_field.sendKeys("Coba1234");
-        WebElement login_button = driver.findElement(By.xpath("//div[@class=\"@class=\"_6ltg\"]/button[@name=\"login\"]"));
-        login_button.isDisplayed();
-        login_button.click();
+    public void search(){
+        driver.get("https://www.joox.com/id");
+        WebElement search_field = driver.findElement(By.xpath("//input[@class=\"jsx-436437380 jsx-2210511138 inputSearch\"]"));
+        search_field.isDisplayed();
+        search_field.sendKeys("Tulus");
+        search_field.sendKeys(Keys.ENTER);
+        WebElement button_playlist = driver.findElement(By.xpath("//button[@class=\"jsx-202257454 active tabListItems\"]"));
+        button_playlist.isDisplayed();
+        button_playlist.click();
+        WebElement top_playlist = driver.findElement(By.xpath("//a[@class=\"jsx-3051754664\"]"));
+        top_playlist.isDisplayed();
+        top_playlist.click();
+        WebElement playlist_title = driver.findElement(By.xpath("//h1[@class=\"jsx-215821495 title\"][text()=\"Best of Tulus\"]"));
+        playlist_title.isDisplayed();
+        String title = playlist_title.getText();
+        Assert.assertEquals(title, "Best of Tulus");
     }
 
     @AfterMethod
