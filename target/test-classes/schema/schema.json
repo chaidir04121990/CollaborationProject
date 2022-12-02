@@ -1,8 +1,8 @@
 {
 	"definitions": {},
-	"$schema": "http://json-schema.org/draft-07/schema#", 
-	"$id": "https://example.com/object1669943369.json", 
-	"title": "Root", 
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://example.com/object1669946615.json",
+	"title": "Root",
 	"type": "object",
 	"required": [
 		"page",
@@ -14,8 +14,8 @@
 	],
 	"properties": {
 		"page": {
-			"$id": "#root/page", 
-			"title": "Page", 
+			"$id": "#root/page",
+			"title": "Page",
 			"type": "integer",
 			"examples": [
 				1
@@ -23,8 +23,8 @@
 			"default": 0
 		},
 		"per_page": {
-			"$id": "#root/per_page", 
-			"title": "Per_page", 
+			"$id": "#root/per_page",
+			"title": "Per_page",
 			"type": "integer",
 			"examples": [
 				6
@@ -32,8 +32,8 @@
 			"default": 0
 		},
 		"total": {
-			"$id": "#root/total", 
-			"title": "Total", 
+			"$id": "#root/total",
+			"title": "Total",
 			"type": "integer",
 			"examples": [
 				12
@@ -41,8 +41,8 @@
 			"default": 0
 		},
 		"total_pages": {
-			"$id": "#root/total_pages", 
-			"title": "Total_pages", 
+			"$id": "#root/total_pages",
+			"title": "Total_pages",
 			"type": "integer",
 			"examples": [
 				2
@@ -50,13 +50,13 @@
 			"default": 0
 		},
 		"data": {
-			"$id": "#root/data", 
-			"title": "Data", 
+			"$id": "#root/data",
+			"title": "Data",
 			"type": "array",
 			"default": [],
 			"items":{
-				"$id": "#root/data/items", 
-				"title": "Items", 
+				"$id": "#root/data/items",
+				"title": "Items",
 				"type": "object",
 				"required": [
 					"id",
@@ -67,8 +67,8 @@
 				],
 				"properties": {
 					"id": {
-						"$id": "#root/data/items/id", 
-						"title": "Id", 
+						"$id": "#root/data/items/id",
+						"title": "Id",
 						"type": "integer",
 						"examples": [
 							1
@@ -76,8 +76,8 @@
 						"default": 0
 					},
 					"email": {
-						"$id": "#root/data/items/email", 
-						"title": "Email", 
+						"$id": "#root/data/items/email",
+						"title": "Email",
 						"type": "string",
 						"default": "",
 						"examples": [
@@ -86,8 +86,8 @@
 						"pattern": "^.*$"
 					},
 					"first_name": {
-						"$id": "#root/data/items/first_name", 
-						"title": "First_name", 
+						"$id": "#root/data/items/first_name",
+						"title": "First_name",
 						"type": "string",
 						"default": "",
 						"examples": [
@@ -96,8 +96,8 @@
 						"pattern": "^.*$"
 					},
 					"last_name": {
-						"$id": "#root/data/items/last_name", 
-						"title": "Last_name", 
+						"$id": "#root/data/items/last_name",
+						"title": "Last_name",
 						"type": "string",
 						"default": "",
 						"examples": [
@@ -106,8 +106,8 @@
 						"pattern": "^.*$"
 					},
 					"avatar": {
-						"$id": "#root/data/items/avatar", 
-						"title": "Avatar", 
+						"$id": "#root/data/items/avatar",
+						"title": "Avatar",
 						"type": "string",
 						"default": "",
 						"examples": [
@@ -120,8 +120,8 @@
 
 		},
 		"support": {
-			"$id": "#root/support", 
-			"title": "Support", 
+			"$id": "#root/support",
+			"title": "Support",
 			"type": "object",
 			"required": [
 				"url",
@@ -129,8 +129,8 @@
 			],
 			"properties": {
 				"url": {
-					"$id": "#root/support/url", 
-					"title": "Url", 
+					"$id": "#root/support/url",
+					"title": "Url",
 					"type": "string",
 					"default": "",
 					"examples": [
@@ -139,8 +139,8 @@
 					"pattern": "^.*$"
 				},
 				"text": {
-					"$id": "#root/support/text", 
-					"title": "Text", 
+					"$id": "#root/support/text",
+					"title": "Text",
 					"type": "string",
 					"default": "",
 					"examples": [
