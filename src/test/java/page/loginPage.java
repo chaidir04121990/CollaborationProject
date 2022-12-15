@@ -9,17 +9,20 @@ import org.testng.Assert;
 public class loginPage {
     WebDriver driver;
 
-    @FindBy(xpath = "//div[@class=\"form_group\"]/input[@id = \"user-name\"]")
-    WebElement usernameInputText;
+    @FindBy(id = "user-name")
+    WebElement usernameInput;
 
-    @FindBy(xpath = "//div[@class=\"form_group\"]/input[@id = \"password\"]")
-    WebElement passwordInputText;
+    @FindBy(id = "password")
+    WebElement passwordInput;
 
     @FindBy(id = "login-button")
     WebElement loginButton;
 
-    @FindBy(xpath = "//h3[@data-test=\"error\" and text()=\"Epic sadface: Username and Password is required\"]")
-    WebElement errorPasswordMsg;
+    @FindBy(xpath = "//h3[@data-test=\"error\" and text()=\"Epic sadface: Username and password do not match any user in this service\"]")
+    WebElement errorUsernameMsg;
+
+    @FindBy(xpath = "h3")
+    WebElement text;
 
     public loginPage(WebDriver driver) {
         this.driver=driver;
@@ -31,19 +34,20 @@ public class loginPage {
     }
 
     public void inputUsername(String username) {
-        usernameInputText.sendKeys(username);
+        usernameInput.sendKeys(username);
     }
 
     public void inputPassword(String password) {
-        passwordInputText.sendKeys(password);
+        passwordInput.sendKeys(password);
     }
 
     public void clickLoginButton(){
         loginButton.click();
     }
 
-    public void validateError() {
-        Assert.assertEquals(errorPasswordMsg.getText(),
+    public void errorUsernameMsgShow() {
+        Assert.assertEquals(errorUsernameMsg.getText(),
                 "Epic sadface: Username and password do not match any user in this service");
-        errorPasswordMsg.isDisplayed();}
+        errorUsernameMsg.isDisplayed();
+    }
 }
