@@ -5,8 +5,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -14,8 +14,8 @@ import java.time.Duration;
 public class loginTest {
     WebDriver driver;
 
-    @BeforeTest
-    public void beforeTest() {
+    @BeforeMethod
+    public void beforeMethod() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
         WebDriverManager.chromedriver().setup();
@@ -45,8 +45,8 @@ public class loginTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     }
 
-    @AfterTest
-    public void teardown() {
+    @AfterMethod
+    public void afterMethod() {
         driver.quit();
     }
 }
