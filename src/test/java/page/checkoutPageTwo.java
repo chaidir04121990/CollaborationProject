@@ -17,27 +17,6 @@ public class checkoutPageTwo {
     @FindBy(xpath = "//span[@class=\"title\" and text()=\"Checkout: Overview\"]")
     WebElement chcekoutText;
 
-    @FindBy(xpath = "//div[@class=\"summary_info_label\" and text()=\"Payment Information:\"]")
-    WebElement paymentLabel;
-
-    @FindBy(xpath = "//div[@class=\"summary_info_label\" and text()=\"Payment Information:\"]/following-sibling::div[1]")
-    WebElement paymentInfo;
-
-    @FindBy(xpath = "//div[@class=\"summary_info\"]/div[3]")
-    WebElement shippingLabel;
-
-    @FindBy(xpath = "//div[@class=\"summary_info\"]/div[4]")
-    WebElement shippingInfo;
-
-    @FindBy(xpath = "//div[@class=\"summary_subtotal_label\"]")
-    WebElement subTotalLabel;
-
-    @FindBy(xpath = "//div[@class=\"summary_tax_label\"]")
-    WebElement taxLabel;
-
-    @FindBy(xpath = "//div[@class=\"summary_total_label\"]")
-    WebElement totalLabel;
-
     @FindBy(xpath = "//button[@id=\"finish\"]")
     WebElement finishBtn;
 
