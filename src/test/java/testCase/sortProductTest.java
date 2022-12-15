@@ -64,6 +64,7 @@ public class sortProductTest {
 
         // Verify URL
         loginPage.goToLoginPage();
+        loginPage.pageValidation();
 
         // Login Process
         loginPage.inputUsername(username);
@@ -82,6 +83,7 @@ public class sortProductTest {
 
         // Verify URL
         loginPage.goToLoginPage();
+        loginPage.pageValidation();
 
         // Login Process
         loginPage.inputUsername(username);
@@ -100,6 +102,7 @@ public class sortProductTest {
 
         // Verify URL
         loginPage.goToLoginPage();
+        loginPage.pageValidation();
 
         // Login Process
         loginPage.inputUsername(username);
@@ -118,8 +121,10 @@ public class sortProductTest {
 
         // Verify URL
         loginPage.goToLoginPage();
+        loginPage.pageValidation();
 
         // Login Process
+        loginPage.pageValidation();
         loginPage.inputUsername(username);
         loginPage.inputPassword(password);
         loginPage.clickLoginButton();
