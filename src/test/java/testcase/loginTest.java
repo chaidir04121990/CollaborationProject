@@ -72,13 +72,13 @@ public class loginTest {
 
         inventoryPageFactory inventoryPage = new inventoryPageFactory(driver);
 
-        inventoryPage.sorting("lohi");
+        inventoryPage.sorting("hilo");
         List<Double> itemList = inventoryPage.getItemsPrice();
 
         int var = 0;
         while (var < itemList.size()-1){
 //            System.out.println(itemList.get(var).toString() + "<=" + itemList.get(var+1));
-            Assert.assertTrue(itemList.get(var) <= itemList.get(var+1));
+            Assert.assertTrue(itemList.get(var) >= itemList.get(var+1));
             var++;
         }
 
