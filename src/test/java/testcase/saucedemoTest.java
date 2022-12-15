@@ -7,6 +7,9 @@ import page.checkoutCompletePage;
 import page.checkoutPageOne;
 import page.checkoutPageTwo;
 import page.homePage;
+
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -24,6 +27,7 @@ public class saucedemoTest {
         WebDriverManager.edgedriver().setup();
         driver = new EdgeDriver(options);
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
     // login success
@@ -53,7 +57,7 @@ public class saucedemoTest {
     public void addToCart() {
         homePage hp = new homePage(driver);
 
-        hp.addItem(2);
+        hp.addTwoItems();
     }
 
     // adding to cart, input personal data, and checkout

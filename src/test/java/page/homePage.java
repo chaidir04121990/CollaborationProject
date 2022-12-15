@@ -84,11 +84,12 @@ public class homePage {
         }
     }
 
+    public int x = 2;
+
     // adding x item to cart
-    public void addItem(int x) {
+    public void addTwoItems() {
         List<WebElement> itemsBtn = inventoryList
                 .findElements(By.xpath("//div[@class=\"inventory_item\"]/div/div[@class=\"pricebar\"]/button"));
-
         for (int i = 0; i < x; i++) {
             itemsBtn.get(i).click();
         }
