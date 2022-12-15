@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="SauceDemoTest" thread-count="1" parallel="tests" >
+    <test name="ChromeTest">
+        <parameter name="browser" value="Chrome" />
+        <classes>
+            <class name="testCase.loginTest">
+            </class>
+            <class name="testCase.sortProductTest">
+            </class>
+            <class name="testCase.BookingTest">
+            </class>
+            <class name="testCase.userIdentityTest">
+            </class>
+        </classes>
+    </test>
+    <test name="FirefoxTest">
+        <parameter name="browser" value="Firefox" />
+        <classes>
+            <class name="testCase.loginTest">
+            </class>
+            <class name="testCase.sortProductTest">
+            </class>
+            <class name="testCase.BookingTest">
+            </class>
+            <class name="testCase.userIdentityTest">
+            </class>
+        </classes>
+    </test>
+    <test name="EdgeTest">
+        <parameter name="browser" value="Edge" />
+        <classes>
+            <class name="testCase.loginTest">
+            </class>
+            <class name="testCase.sortProductTest">
+            </class>
+            <class name="testCase.BookingTest">
+            </class>
+            <class name="testCase.userIdentityTest">
+            </class>
+        </classes>
+    </test>
+</suite>
