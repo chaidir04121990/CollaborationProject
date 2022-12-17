@@ -1,17 +1,24 @@
 package Test;
 
+import Page.CheckoutPage;
+import Page.Homepage;
 import Page.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Rule;
 import org.junit.rules.ExpectedException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class DemoSeleniumBasic {
     WebDriver driver;
@@ -66,14 +73,39 @@ public class DemoSeleniumBasic {
 
     @Test (priority = 5)
     public void descendantPriceSort() throws InterruptedException{
-        LoginPage login = new LoginPage(driver);
-        login.inputUsername("standard_user");
-        login.inputPassword("secret_sauce");
-        login.buttonLogin();
-        assertEquals(driver.findElement(By.xpath("//*[@id=\"login_button_container\"]/div/form/div[3]/h3")), driver.findElement(By.xpath("//*[@id=\"login_button_container\"]/div/form/div[3]/h3")));
-        Thread.sleep(3000);
+        loginTrue();
+
+        Homepage homepage = new Homepage(driver);
+        homepage.sortContainer();
+        homepage.descendantSort();
+        Thread.sleep(2000);
+        List<WebElement> elementList = driver.findElements(By.className("inventory_item_price"));
+        Assert.assertTrue(Float.parseFloat(elementList.get(0).getText().substring(1)) >= Float.parseFloat(elementList.get(1).getText().substring(1)));
     }
 
+    @Test (priority = 6)
+    public void Checkout() throws InterruptedException {
+        loginTrue();
+
+        CheckoutPage checkoutPage = new CheckoutPage(driver);
+        checkoutPage.addToCart();
+        assertEquals(driver.findElement(By.id("remove-sauce-labs-fleece-jacket")).getText(), "REMOVE");
+        assertEquals(driver.findElement(By.id("remove-sauce-labs-backpack")).getText(), "REMOVE");
+        checkoutPage.Cart();
+        assertEquals(driver.getCurrentUrl(),"https://www.saucedemo.com/cart.html");
+        checkoutPage.checkoutClick();
+        assertEquals(driver.getCurrentUrl(),"https://www.saucedemo.com/checkout-step-one.html");
+        checkoutPage.checkoutOne();
+        Thread.sleep(3000);
+        assertEquals(driver.getCurrentUrl(),"https://www.saucedemo.com/checkout-step-two.html");
+        checkoutPage.checkoutTwo();
+        Thread.sleep(3000);
+        assertEquals(driver.getCurrentUrl(),"https://www.saucedemo.com/checkout-complete.html");
+        Thread.sleep(2000);
+
+        //tinggal tambah assertionnya
+
+    }
 
     @AfterMethod
     public void quit(){
