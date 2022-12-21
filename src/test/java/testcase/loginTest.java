@@ -2,6 +2,7 @@ package testcase;
 
 import org.testng.annotations.AfterMethod;
 import page.loginPage;
+import page.productPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -27,6 +28,7 @@ public class loginTest {
     @Test(priority = 2)
     public void loginSuccess() {
         loginPage loginPage = new loginPage(driver);
+        productPage productPage = new productPage(driver);
 
         loginPage.goToLoginPage();
         loginPage.inputUsername("standard_user");
