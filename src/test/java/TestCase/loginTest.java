@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -16,6 +17,7 @@ public class loginTest {
     WebDriver driver;
 
     @BeforeTest
+    @Parameters("browser")
     public void beforeTest() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
