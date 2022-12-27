@@ -1,9 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Testing Failed Login">
-    <test name="Wrong Username">
-        <classes>
-            <class name="testcase.loginTest"/>
-        </classes>
+<suite name="Testing Login">
+    <test name="Firefox Test">
+        <parameter name="browser" value="Firefox">
+            <classes>
+                <class name="testcase.loginTest">
+                    <methods>
+                        <include name="loginFailed"/>
+                    </methods>
+                </class>
+                <class name="testcase.loginTest">
+                    <methods>
+                        <include name="loginSuccess"/>
+                    </methods>
+                </class>
+                <class name="testcase.sortingTest"/>
+                <class name="testcase.checkoutTest"/>
+            </classes>
+        </parameter>
+        <parameter name="browser" value="Firefox">
+            <classes>
+                <class name="testcase.loginTest">
+                    <methods>
+                        <include name="loginFailed"/>
+                    </methods>
+                </class>
+                <class name="testcase.loginTest">
+                    <methods>
+                        <include name="loginSuccess"/>
+                    </methods>
+                </class>
+                <class name="testcase.sortingTest"/>
+                <class name="testcase.checkoutTest"/>
+            </classes>
+        </parameter>
+        <parameter name="browser" value="Firefox">
+            <classes>
+                <class name="testcase.loginTest">
+                    <methods>
+                        <include name="loginFailed"/>
+                    </methods>
+                </class>
+                <class name="testcase.loginTest">
+                    <methods>
+                        <include name="loginSuccess"/>
+                    </methods>
+                </class>
+                <class name="testcase.sortingTest"/>
+                <class name="testcase.checkoutTest"/>
+            </classes>
+        </parameter>
     </test> <!-- Test -->
 </suite> <!-- Suite -->
