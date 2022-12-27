@@ -1,22 +1,26 @@
 package testcase;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.testng.annotations.Parameters;
 import page.loginPage;
 import page.cartPage;
 import page.checkoutCompletePage;
 import page.checkoutPageOne;
 import page.checkoutPageTwo;
 import page.homePage;
-
-import java.util.concurrent.TimeUnit;
-
+import java.time.Duration;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+//to run testcase without test suite
 public class saucedemoTest {
 
     WebDriver driver;
@@ -24,10 +28,11 @@ public class saucedemoTest {
     @BeforeTest
     public void setup() {
         EdgeOptions options = new EdgeOptions();
+        options.addArguments("--headless");
         WebDriverManager.edgedriver().setup();
         driver = new EdgeDriver(options);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 
     // login success
