@@ -7,8 +7,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class inventoryPageFactory {
 
@@ -43,18 +45,19 @@ public class inventoryPageFactory {
 
     public void sorting(String sortingRule){
         sortingMenuParent.click();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         JavascriptExecutor js = (JavascriptExecutor) driver;
 //        String text = js.executeScript("return window.getComputedStyle(document.querySelector('.submitButton'),'::before').getPropertyValue('content')").toString();
-        if (sortingRule == "az"){
+        if (Objects.equals(sortingRule, "az")){
             sortingMenuChildAZ.click();
         }
-        else if (sortingRule == "za") {
+        else if (Objects.equals(sortingRule, "za")) {
             sortingMenuChildZA.click();
         }
-        else if (sortingRule == "lohi") {
+        else if (Objects.equals(sortingRule, "lohi")) {
             sortingMenuChildLohi.click();
         }
-        else if (sortingRule == "hilo") {
+        else if (Objects.equals(sortingRule, "hilo")) {
             sortingMenuChildHilo.click();
         }
     }

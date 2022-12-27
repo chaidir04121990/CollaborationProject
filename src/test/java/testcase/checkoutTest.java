@@ -25,7 +25,8 @@ public class checkoutTest {
     }
 
     @Test
-    public void checkoutTest(){
+    @Parameters("mode")
+    public void checkoutTest(String mode){
 
         System.out.println("Checkout Test");
 
@@ -39,7 +40,7 @@ public class checkoutTest {
 
         int amount = 3;
 
-        sortingTest.InventoryPriceComparison(driverPage);
+        sortingTest.InventoryPriceComparison(driverPage, mode);
 
         inventoryPage.addItems(amount);
         inventoryPage.checkOut();
@@ -62,8 +63,8 @@ public class checkoutTest {
     @AfterMethod
     public void teardown(){
         System.out.println("SORTING AFTER TEST...");
-        System.out.println(driverPage);
-        driverPage.quit();
+//        System.out.println(driverPage);
+        this.setupParam.tearDown();
     }
 
 }

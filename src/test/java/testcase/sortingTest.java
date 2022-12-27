@@ -8,6 +8,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import page.inventoryPageFactory;
 
+import java.time.Duration;
 import java.util.List;
 
 public class sortingTest {
@@ -24,17 +25,17 @@ public class sortingTest {
         driverPage = setupParam.getDriver();
     }
 
-    public static void InventoryPriceComparison(WebDriver driverPPP){
-        System.out.println("Iventory Comparison");
+    public static void InventoryPriceComparison(WebDriver driverPPP, String mode){
+        System.out.println("Iventory Comparison with " + mode + " mode");
 
         inventoryPageFactory inventoryPage = new inventoryPageFactory(driverPPP);
 
-        inventoryPage.sorting("hilo");
+        inventoryPage.sorting(mode);
         List<Double> itemList = inventoryPage.getItemsPrice();
 
         int var = 0;
         while (var < itemList.size()-1){
-//            System.out.println(itemList.get(var).toString() + "<=" + itemList.get(var+1));
+            System.out.println(itemList.get(var).toString() + " >= " + itemList.get(var+1));
             Assert.assertTrue(itemList.get(var) >= itemList.get(var+1));
             var++;
         }
@@ -42,16 +43,17 @@ public class sortingTest {
     }
 
     @Test
-    public void comparePriceTest(){
+    @Parameters("mode")
+    public void comparePriceTest(String mode){
         setupParam.loginTesting(driverPage, "standard_user", "secret_sauce");
-        InventoryPriceComparison(driverPage);
+        InventoryPriceComparison(driverPage, mode);
     }
 
     @AfterMethod
     public void teardown(){
         System.out.println("SORTING AFTER TEST...");
-        System.out.println(driverPage);
-        driverPage.quit();
+//        System.out.println(driverPage);
+        this.setupParam.tearDown();
     }
 
 }
