@@ -33,7 +33,7 @@ public class setupAll {
             System.out.println(browser.toUpperCase());
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("headless");
+            options.addArguments("--headless");
             driver = new ChromeDriver(options);
         }
         if (browser.toLowerCase().equals("edge")){
