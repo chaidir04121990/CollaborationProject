@@ -6,6 +6,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -18,11 +20,20 @@ public class loginTest {
 
     @BeforeTest
     @Parameters("browser")
-    public void beforeTest() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-maximized");
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver(options);
+    public void beforeTest(String browser) throws Exception{
+        if (browser.equalsIgnoreCase("chrome")) {
+            ChromeOptions options = new ChromeOptions();
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver(options);
+            driver.manage().window().maximize();
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        } else if (browser.equalsIgnoreCase("edge")) {
+            EdgeOptions options = new EdgeOptions();
+            WebDriverManager.edgedriver().setup();
+            driver = new EdgeDriver(options);
+            driver.manage().window().maximize();
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        }
     }
 
     @Test

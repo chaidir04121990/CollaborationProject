@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7a8bce3-b33a-4348-a46c-db03b80e241f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCase/loginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase/loginTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCase/sortingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase/sortingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +51,23 @@
       <module name="Dimas_CH7" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
       <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="loginTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Dimas_CH7" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TestCase.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="TestCase" />
+      <option name="MAIN_CLASS_NAME" value="TestCase.loginTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -114,6 +131,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.D:/Proyek/Dimas_CH7/testng.xml" />
+        <item itemvalue="TestNG.loginTest" />
         <item itemvalue="TestNG.sortingTest.sortDescending" />
         <item itemvalue="TestNG.loginTest.loginFailed" />
         <item itemvalue="TestNG.loginTest.loginSuccess" />

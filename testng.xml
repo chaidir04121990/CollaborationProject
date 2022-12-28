@@ -7,5 +7,12 @@
             <class name="TestCase.loginTest"/>
             <class name="TestCase.sortingTest"/>
         </classes>
-    </test> <!-- Test -->
+    </test>
+    <test name="EdgeTest">
+        <parameter name="browser" value="Edge"></parameter>
+        <classes>
+            <class name="TestCase.loginTest"/>
+            <class name="TestCase.sortingTest"/>
+        </classes>
+    </test><!-- Test -->
 </suite> <!-- Suite -->
