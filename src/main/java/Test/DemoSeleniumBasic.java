@@ -1,8 +1,9 @@
 package Test;
 
-import Page.CheckoutPage;
-import Page.Homepage;
-import Page.LoginPage;
+import Page.*;
+//import Page.CheckoutPage;
+//import Page.Homepage;
+//import Page.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Rule;
 import org.junit.rules.ExpectedException;
@@ -18,7 +19,6 @@ import java.util.List;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
 
 public class DemoSeleniumBasic {
     WebDriver driver;
