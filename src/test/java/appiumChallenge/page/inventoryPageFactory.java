@@ -3,6 +3,7 @@ package appiumChallenge.page;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -16,10 +17,13 @@ import java.util.Objects;
 public class inventoryPageFactory extends appiumTest{
 
     public AppiumDriver<MobileElement> driverPage;
+    Dimension size;
 
     public inventoryPageFactory(){
         this.driverPage = driver;
         PageFactory.initElements(driverPage, this);
+        this.size = driverPage.manage().window().getSize();
+
     }
 
     @FindBy(xpath = "//*[@content-desc=\"test-Cart drop zone\"]/android.view.ViewGroup/android.widget.TextView")
@@ -35,10 +39,8 @@ public class inventoryPageFactory extends appiumTest{
     List<WebElement> itemPrices;
 
     @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-Item\"]")
-//    WebElement inventoryListParent;
     List<WebElement> inventoryListParentElem;
 
-    public List<ElementObj> elementMapping = new ArrayList<ElementObj>();
 
     @FindBy(xpath = "//*[@content-desc=\"test-Cart\"]/android.view.ViewGroup/android.widget.TextView")
     WebElement cartNumber;
@@ -69,10 +71,10 @@ public class inventoryPageFactory extends appiumTest{
         }
     }
 
-    public Boolean checking(List<ElementObj> ls, WebElement elem) {
+    public Boolean checking(List<ElementObj> ls, String elem) {
         if(ls.size() == 0) { return Boolean.TRUE; }
         for (ElementObj x : ls) {
-            if (elem.toString() == x.title) {
+            if (elem == x.title) {
                 return Boolean.FALSE;
             }
         }
@@ -80,87 +82,68 @@ public class inventoryPageFactory extends appiumTest{
     }
 
     public List<ElementObj> getAllPrice(){
-        List<WebElement> inventoryListParent = inventoryListParentElem;
-        elementMapping.clear();
-        int amn = 0;
-        for (WebElement x:inventoryListParent) {
-//            System.out.println("GETTING ELEMENT " + amn + " PRICE FROM " + inventoryListParent.size() + " ITEMS...");
-            if (x.findElements(By.xpath("//android.view.ViewGroup[@content-desc=\"test-ADD TO CART\"]")).size() > 0){
-                String title = x.findElement(By.xpath("//android.widget.TextView[@content-desc=\"test-Item title\"]")).getText();
-                String price = x.findElement(By.xpath("//android.widget.TextView[@content-desc=\"test-Price\"]")).getText();
-                WebElement button = x.findElement(By.xpath("//android.view.ViewGroup[@content-desc=\"test-ADD TO CART\"]"));
-//                try {
-//                    System.out.println(title);
-//                    System.out.println(price);
-//                    System.out.println(button.isDisplayed());
-//                } catch (Exception e) {
-//                    throw new RuntimeException(e);
-//                }
-                if (elementMapping == null || checking(elementMapping,x.findElement(By.xpath("//android.widget.TextView[@content-desc=\"test-Item title\"]")))){
-//                    System.out.println("ADD ITEM " + amn + " TO LIST...");
-                    elementMapping.add(new ElementObj(
-                            title,
-                            Double.parseDouble(price.replace("$","")),
-                            button
-                    ));
-//                    button.click();
-                }
-            } else {
-                continue;
-//                System.out.println("Scrolling...");
+        List<ElementObj> ObjList = new ArrayList<ElementObj>();
 
+        int flag = 1;
+        while (flag != 0){
+
+            List<WebElement> inventoryList = getitemList();
+
+            flag = inventoryList.size();
+            if (flag == 0){
+                break;
             }
-            amn++;
-        }
-//        System.out.println("There are "+ amn +" item(s) on this appiumChallenge.page!");
-//        System.out.println("There are "+ elementMapping.size() +" item(s) on list!");
 
-        return elementMapping;
+            for (int j = 0; j < 2; j++){
+                List<WebElement> varElem = inventoryList.get(j).findElements(By.xpath("//android.view.ViewGroup[@content-desc=\"test-ADD TO CART\"]"));
+                if (varElem.size() > 0){
+                    String title = inventoryList.get(j).findElement(By.xpath("//android.widget.TextView[@content-desc=\"test-Item title\"]")).getText();
+                    String price = inventoryList.get(j).findElement(By.xpath("//android.widget.TextView[@content-desc=\"test-Price\"]")).getText().replace("$","");
+                    if (ObjList == null || checking(ObjList,title))
+                        ObjList.add(new ElementObj(
+                            title,
+                            Double.parseDouble(price),
+                            null
+                            )
+                    );
+                }
+            }
+
+            scrollDisplay(1000, this.driverPage, size.width / 2, (int) (size.height * 0.6), size.width / 2, size.height * 0);
+        }
+        return ObjList;
 
     }
 
-    public void addItems(int amount){
-        List<WebElement> inventoryListParent = inventoryListParentElem;
+    public List<WebElement> getitemList(){
+        return inventoryListParentElem;
+    }
 
-        elementMapping.clear();
-        int amn = 1;
-        for (WebElement x:inventoryListParent) {
-//            System.out.println("FOUND ITEM " + amn + " OF " + amount + " FROM " + inventoryListParent.size() + " ITEMS");
-            List<WebElement> varElem = x.findElements(By.xpath("//android.view.ViewGroup[@content-desc=\"test-ADD TO CART\"]"));
-//            System.out.println(varElem);
+    public void addItems(int amount){
+        scrollDisplay(60, this.driverPage, size.width / 2, (int) (size.height * 0.3), size.width / 2, (int) (size.height * 0.8));
+
+        int amn = 0;
+        int i = 0;
+        while (amn != amount){
+            List<WebElement> inventoryList = getitemList();
+            List<WebElement> varElem = inventoryList.get(i).findElements(By.xpath("//android.view.ViewGroup[@content-desc=\"test-ADD TO CART\"]"));
 
             if (varElem.size() > 0){
-                String title = x.findElement(By.xpath("//android.widget.TextView[@content-desc=\"test-Item title\"]")).getText();
-                String price = x.findElement(By.xpath("//android.widget.TextView[@content-desc=\"test-Price\"]")).getText();
-                WebElement button = x.findElement(By.xpath("//android.view.ViewGroup[@content-desc=\"test-ADD TO CART\"]"));
-//                try {
-//                    System.out.println(title);
-//                    System.out.println(price);
-//                    System.out.println(button.isDisplayed());
-//                } catch (Exception e) {
-//                    throw new RuntimeException(e);
-//                }
-                if (elementMapping == null || checking(elementMapping,x.findElement(By.xpath("//android.widget.TextView[@content-desc=\"test-Item title\"]")))){
-//                    System.out.println("ADDING ITEM " + amn + " TO LIST");
-                    elementMapping.add(new ElementObj(
-                            title,
-                            Double.parseDouble(price.replace("$","")),
-                            button
-                    ));
-                    if (amn == amount){
-//                        System.out.println("THIS IS THE ITEM TO BE SELECTED...");
-                        button.click();
-                        break;
-                    }
-                }
+                String title = inventoryList.get(i).findElement(By.xpath("//android.widget.TextView[@content-desc=\"test-Item title\"]")).getText();
+                String price = inventoryList.get(i).findElement(By.xpath("//android.widget.TextView[@content-desc=\"test-Price\"]")).getText();
+                WebElement button = inventoryList.get(i).findElement(By.xpath("//android.view.ViewGroup[@content-desc=\"test-ADD TO CART\"]"));
+
+                button.click();
+
+                i++;
+                amn++;
+
             }
             else {
-                continue;
-//                System.out.println("Scrolling...");
+                scrollDisplay(1000, this.driverPage, size.width / 2, (int) (size.height * 0.6), size.width / 2, size.height * 0);
+                i = 0;
             }
-            amn++;
         }
-
     }
 
     public int getCartNumber(){

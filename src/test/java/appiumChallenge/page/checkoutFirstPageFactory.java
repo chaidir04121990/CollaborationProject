@@ -4,7 +4,6 @@ import appiumChallenge.appiumTest;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -48,32 +47,26 @@ public class checkoutFirstPageFactory extends appiumTest{
     }
 
     public void setFirstName(String param){
-//        System.out.println(param);
         firstName.sendKeys(param);
     }
 
     public void setLastName(String param){
-//        System.out.println(param);
         lastName.sendKeys(param);
     }
 
     public void setZipCode(String param){
-//        System.out.println(param);
         zipCode.sendKeys(param);
     }
 
     public void continueCheckout(){
-//        System.out.println(continueButton);
         Boolean param = true;
 
         while (param) {
             try {
-//                System.out.println("FINDING BUTTON...");
                 continueButton.click();
-//                System.out.println("BUTTON CLICKED...");
                 param = false;
             } catch (Exception e) {
-                scrollDisplay(this.driverPage, size.width / 2, size.height / 2, size.width / 2, (int) (size.height * 0.2));
+                scrollDisplay(1000, this.driverPage, size.width / 2, (int) (size.height * 0.6), size.width / 2, size.height * 0);
             }
         }
     }

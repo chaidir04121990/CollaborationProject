@@ -7,7 +7,11 @@ Feature: Sorting feature test
     And User press login button
     Then User is on home page
 
-  Scenario: User sort product from low to hi
+  Scenario Outline: User sort product from low to hi
     When User press sorting button
-    And User press low to high "lohi" button
-    Then Product sorted from low to high "lohi"
+    And User press sorting mode <mode> button
+    Then Product sorted with mode <mode>
+    Examples:
+      | mode   |
+      | "lohi" |
+      | "hilo" |

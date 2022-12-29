@@ -3,7 +3,6 @@ import appiumChallenge.appiumTest;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,7 +21,6 @@ public class checkoutSecondPageFactory extends appiumTest {
     WebElement ppp;
 
     @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-Price\"]/android.widget.TextView")
-//    WebElement inventoryListParent;
     List<WebElement> inventoryItemPrice;
 
     @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-FINISH\"]")
@@ -45,17 +43,14 @@ public class checkoutSecondPageFactory extends appiumTest {
     }
 
     public void finishCheckout(){
-//        System.out.println(finishButton);
         Boolean param = true;
 
         while (param) {
             try {
-//                System.out.println("FINDING BUTTON...");
                 finishButton.click();
-//                System.out.println("BUTTON CLICKED...");
                 param = false;
             } catch (Exception e) {
-                scrollDisplay(this.driverPage, size.width / 2, size.height / 2, size.width / 2, (int) (size.height * 0.2));
+                scrollDisplay(1000, this.driverPage, size.width / 2, (int) (size.height * 0.6), size.width / 2, size.height * 0);
             }
         }
     }

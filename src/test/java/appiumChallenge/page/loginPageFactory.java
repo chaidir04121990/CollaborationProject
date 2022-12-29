@@ -9,12 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.net.MalformedURLException;
-import java.util.concurrent.TimeUnit;
-
 public class loginPageFactory extends appiumTest{
-
-//    WebDriver driver;
     public AppiumDriver<MobileElement> driverPage;
 
     public loginPageFactory(){
@@ -33,16 +28,13 @@ public class loginPageFactory extends appiumTest{
 
     public String checkPageNavBar(){
         String loginBTN =  loginButton.findElement(By.xpath("//android.widget.TextView")).getText();
-//        System.out.println(loginBTN);
         return loginBTN;
     }
     public void inputUsername(String username){
-//        System.out.println(username);
         usernameForm.sendKeys(username);
     }
 
     public void inputPassword(String password){
-//        System.out.println(password);
         passwordForm.sendKeys(password);
     }
 

@@ -37,12 +37,12 @@ public class inventoryStepDef {
         inventoryPage.sortingParent();
     }
 
-    @And("User press low to high {string} button")
+    @And("User press sorting mode {string} button")
     public void sortingMode(String mode) {
         inventoryPage.sortingMode(mode);
     }
 
-    @Then("Product sorted from low to high {string}")
+    @Then("Product sorted with mode {string}")
     public void checkSorting(String mode) {
         List<ElementObj> itemsList = inventoryPage.getAllPrice();
 
@@ -51,21 +51,20 @@ public class inventoryStepDef {
         if (mode.equals("lohi")) { mark = "<="; }
         if (mode.equals("hilo")) { mark = ">="; }
         while (var < itemsList.size()-1){
-//            System.out.printf("%f %s %f", itemsList.get(var).getPrice(), mark, itemsList.get(var+1).getPrice());
-            Assert.assertTrue(itemsList.get(var).getPrice() <= itemsList.get(var+1).getPrice());
+            if (mode.equals("lohi")) { Assert.assertTrue(itemsList.get(var).getPrice() <= itemsList.get(var+1).getPrice()); }
+            else if (mode.equals("hilo")) { Assert.assertTrue(itemsList.get(var).getPrice() >= itemsList.get(var+1).getPrice()); }
             var++;
         }
     }
 
-    @When("User press add to cart button from item {int}")
-    public void addtoCart(Integer itemNum) {
-//        System.out.println("ADDING ITEM " + itemNum + " TO CART");
-        inventoryPage.addItems(itemNum);
+    @When("User add {int} item to cart button")
+    public void addtoCart(Integer itemAmn) {
+        inventoryPage.addItems(itemAmn);
     }
 
-    @Then("Product added to cart")
-    public void checkCart() {
-        inventoryPage.getCartNumber();
+    @Then("{int} Product added to cart")
+    public void checkCart(int itemAmn) {
+        Assert.assertEquals(itemAmn, inventoryPage.getCartNumber());
     }
 
     @And("User click Cart Button")
