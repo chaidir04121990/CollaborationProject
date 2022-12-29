@@ -13,7 +13,7 @@ public class CucumberHooks {
 
      @After
      public static void afterAll() {
-          System.out.println("after all");
+          System.out.println("after");
      BaseTest.teardown();
      }
 

@@ -20,7 +20,7 @@ public class BaseTest {
 //    protected static AppiumDriver<MobileElement> driver;
 
     protected static AndroidDriver driver;
-    @BeforeMethod
+
     public static void setup() throws MalformedURLException {
         DesiredCapabilities cap = new DesiredCapabilities();
 
@@ -39,7 +39,6 @@ public class BaseTest {
         System.out.println("Setup Done!!!");
     }
 
-    @AfterMethod
     public static void teardown() {
         driver.quit();
     }
