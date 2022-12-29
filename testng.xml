@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="SauceDemo" thread-count="1" parallel="tests" >
+    <test name="ChromeTest">
+        <classes>
+            <class name="testcase.LoginTest">
+            </class>
+        </classes>
+    </test>
+</suite>
