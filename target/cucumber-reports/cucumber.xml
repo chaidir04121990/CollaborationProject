@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="24" time="526.719">
+    <testcase classname="Checkout" name="01 successful checkout with 6 products" time="56.809">
+        <system-out><![CDATA[Given user is on login page.................................................passed
+And user input username with "standard_user"................................passed
+And user input password with "secret_sauce".................................passed
+And user click on login button..............................................passed
+Then user is on homepage....................................................passed
+And user add 6 products to the cart.........................................passed
+And user click on cart button...............................................passed
+Then user is on cartpage....................................................passed
+And user click on checkout button...........................................passed
+Then user is on identitypage................................................passed
+And user input firstname with "Andreanov"...................................passed
+And user input lastname with "Ridhovan".....................................passed
+And user input postalcode with "12345"......................................passed
+And user click on continue button...........................................passed
+And user is on overviewpage.................................................passed
+When user click on finish button............................................passed
+Then user is on completepage................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Checkout" name="02 successful checkout with 5 products" time="52.67">
+        <system-out><![CDATA[Given user is on login page.................................................passed
+And user input username with "standard_user"................................passed
+And user input password with "secret_sauce".................................passed
+And user click on login button..............................................passed
+Then user is on homepage....................................................passed
+And user add 5 products to the cart.........................................passed
+And user click on cart button...............................................passed
+Then user is on cartpage....................................................passed
+And user click on checkout button...........................................passed
+Then user is on identitypage................................................passed
+And user input firstname with "Andreanov"...................................passed
+And user input lastname with "Ridhovan".....................................passed
+And user input postalcode with "12345"......................................passed
+And user click on continue button...........................................passed
+And user is on overviewpage.................................................passed
+When user click on finish button............................................passed
+Then user is on completepage................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Checkout" name="03 successful checkout with 4 products" time="46.691">
+        <system-out><![CDATA[Given user is on login page.................................................passed
+And user input username with "standard_user"................................passed
+And user input password with "secret_sauce".................................passed
+And user click on login button..............................................passed
+Then user is on homepage....................................................passed
+And user add 4 products to the cart.........................................passed
+And user click on cart button...............................................passed
+Then user is on cartpage....................................................passed
+And user click on checkout button...........................................passed
+Then user is on identitypage................................................passed
+And user input firstname with "Andreanov"...................................passed
+And user input lastname with "Ridhovan".....................................passed
+And user input postalcode with "12345"......................................passed
+And user click on continue button...........................................passed
+And user is on overviewpage.................................................passed
+When user click on finish button............................................passed
+Then user is on completepage................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Checkout" name="04 successful checkout with 3 products" time="42.828">
+        <system-out><![CDATA[Given user is on login page.................................................passed
+And user input username with "standard_user"................................passed
+And user input password with "secret_sauce".................................passed
+And user click on login button..............................................passed
+Then user is on homepage....................................................passed
+And user add 3 products to the cart.........................................passed
+And user click on cart button...............................................passed
+Then user is on cartpage....................................................passed
+And user click on checkout button...........................................passed
+Then user is on identitypage................................................passed
+And user input firstname with "Andreanov"...................................passed
+And user input lastname with "Ridhovan".....................................passed
+And user input postalcode with "12345"......................................passed
+And user click on continue button...........................................passed
+And user is on overviewpage.................................................passed
+When user click on finish button............................................passed
+Then user is on completepage................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Checkout" name="05 successful checkout with 2 products" time="39.378">
+        <system-out><![CDATA[Given user is on login page.................................................passed
+And user input username with "standard_user"................................passed
+And user input password with "secret_sauce".................................passed
+And user click on login button..............................................passed
+Then user is on homepage....................................................passed
+And user add 2 products to the cart.........................................passed
+And user click on cart button...............................................passed
+Then user is on cartpage....................................................passed
+And user click on checkout button...........................................passed
+Then user is on identitypage................................................passed
+And user input firstname with "Andreanov"...................................passed
+And user input lastname with "Ridhovan".....................................passed
+And user input postalcode with "12345"......................................passed
+And user click on continue button...........................................passed
+And user is on overviewpage.................................................passed
+When user click on finish button............................................passed
+Then user is on completepage................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Checkout" name="06 successful checkout with 1 products" time="32.798">
+        <system-out><![CDATA[Given user is on login page.................................................passed
+And user input username with "standard_user"................................passed
+And user input password with "secret_sauce".................................passed
+And user click on login button..............................................passed
+Then user is on homepage....................................................passed
+And user add 1 product to the cart..........................................passed
+And user click on cart button...............................................passed
+Then user is on cartpage....................................................passed
+And user click on checkout button...........................................passed
+Then user is on identitypage................................................passed
+And user input firstname with "Andreanov"...................................passed
+And user input lastname with "Ridhovan".....................................passed
+And user input postalcode with "12345"......................................passed
+And user click on continue button...........................................passed
+And user is on overviewpage.................................................passed
+When user click on finish button............................................passed
+Then user is on completepage................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Login" name="01 Login with valid credentials" time="9.205">
+        <system-out><![CDATA[And user input username with "standard_user"................................passed
+And user input password with "secret_sauce".................................passed
+When user click on login button.............................................passed
+Then user is on homepage....................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Login" name="01 Login with valid credentials 2" time="9.716">
+        <system-out><![CDATA[And user input username with "problem_user".................................passed
+And user input password with "secret_sauce".................................passed
+When user click on login button.............................................passed
+Then user is on homepage....................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Login" name="02 Login with wrong credentials" time="8.395">
+        <system-out><![CDATA[And user input username with "secret_sauce".................................passed
+And user input password with "standard_user"................................passed
+When user click on login button.............................................passed
+Then user found error message invalid credentials...........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Login" name="02 Login with wrong credentials 2" time="9.945">
+        <system-out><![CDATA[And user input username with "secret_sauce".................................passed
+And user input password with "problem_user".................................passed
+When user click on login button.............................................passed
+Then user found error message invalid credentials...........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Login" name="02 Login with wrong credentials 3" time="9.137">
+        <system-out><![CDATA[And user input username with "secret_sauce".................................passed
+And user input password with "locked_out_user"..............................passed
+When user click on login button.............................................passed
+Then user found error message invalid credentials...........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Login" name="03 Login with locked account credentials" time="9.01">
+        <system-out><![CDATA[And user input username with "locked_out_user"..............................passed
+And user input password with "secret_sauce".................................passed
+When user click on login button.............................................passed
+Then user found error message locked account................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Login" name="04 Login with empty username" time="10.278">
+        <system-out><![CDATA[And user input username with "".............................................passed
+And user input password with "secret_sauce".................................passed
+When user click on login button.............................................passed
+Then user found error message username mandatory............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Login" name="05 Login with empty password" time="10.4">
+        <system-out><![CDATA[And user input username with "standard_user"................................passed
+And user input password with "".............................................passed
+When user click on login button.............................................passed
+Then user found error message password mandatory............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Login" name="06 Login with empty all field" time="9.546">
+        <system-out><![CDATA[And user input username with "".............................................passed
+And user input password with "".............................................passed
+When user click on login button.............................................passed
+Then user found error message all field mandatory...........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Sort" name="01 sort product from the lowest price" time="12.464">
+        <system-out><![CDATA[Given user is on login page.................................................passed
+And user input username with "standard_user"................................passed
+And user input password with "secret_sauce".................................passed
+And user click on login button..............................................passed
+Then user is on homepage....................................................passed
+And user click sort button..................................................passed
+When user click sort price low to high button...............................passed
+Then user see list product from lowest price................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Sort" name="02 sort product from the highest price" time="12.882">
+        <system-out><![CDATA[Given user is on login page.................................................passed
+And user input username with "standard_user"................................passed
+And user input password with "secret_sauce".................................passed
+And user click on login button..............................................passed
+Then user is on homepage....................................................passed
+And user click sort button..................................................passed
+When user click sort price high to low button...............................passed
+Then user see list product from highest price...............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Sort" name="03 sort product alphabet asc" time="13.223">
+        <system-out><![CDATA[Given user is on login page.................................................passed
+And user input username with "standard_user"................................passed
+And user input password with "secret_sauce".................................passed
+And user click on login button..............................................passed
+Then user is on homepage....................................................passed
+And user click sort button..................................................passed
+When user click sort price A to Z button....................................passed
+Then user see list product alphabet asc.....................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Sort" name="04 sort product alphabet desc" time="13.083">
+        <system-out><![CDATA[Given user is on login page.................................................passed
+And user input username with "standard_user"................................passed
+And user input password with "secret_sauce".................................passed
+And user click on login button..............................................passed
+Then user is on homepage....................................................passed
+And user click sort button..................................................passed
+When user click sort price Z to A button....................................passed
+Then user see list product alphabet desc....................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Checkout" name="01 successful fill user identity" time="24.974">
+        <system-out><![CDATA[Given user is on login page.................................................passed
+And user input username with "standard_user"................................passed
+And user input password with "secret_sauce".................................passed
+And user click on login button..............................................passed
+Then user is on homepage....................................................passed
+And user add 1 product to the cart..........................................passed
+And user click on cart button...............................................passed
+Then user is on cartpage....................................................passed
+And user click on checkout button...........................................passed
+Then user is on identitypage................................................passed
+And user input firstname with "Andreanov"...................................passed
+And user input lastname with "Ridhovan".....................................passed
+And user input postalcode with "12345"......................................passed
+When user click on continue button..........................................passed
+Then user is on overviewpage................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Checkout" name="02 verify firstname field is mandatory" time="21.005">
+        <system-out><![CDATA[Given user is on login page.................................................passed
+And user input username with "standard_user"................................passed
+And user input password with "secret_sauce".................................passed
+And user click on login button..............................................passed
+Then user is on homepage....................................................passed
+And user add 1 product to the cart..........................................passed
+And user click on cart button...............................................passed
+Then user is on cartpage....................................................passed
+And user click on checkout button...........................................passed
+Then user is on identitypage................................................passed
+And user input firstname with ""............................................passed
+And user input lastname with "Ridhovan".....................................passed
+And user input postalcode with "12345"......................................passed
+When user click on continue button..........................................passed
+And user found error message firstname is mandatory.........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Checkout" name="03 verify lastname field is mandatory" time="18.951">
+        <system-out><![CDATA[Given user is on login page.................................................passed
+And user input username with "standard_user"................................passed
+And user input password with "secret_sauce".................................passed
+And user click on login button..............................................passed
+Then user is on homepage....................................................passed
+And user add 1 product to the cart..........................................passed
+And user click on cart button...............................................passed
+Then user is on cartpage....................................................passed
+And user click on checkout button...........................................passed
+Then user is on identitypage................................................passed
+And user input firstname with "Andreanov"...................................passed
+And user input lastname with "".............................................passed
+And user input postalcode with "12345"......................................passed
+When user click on continue button..........................................passed
+And user found error message lastname is mandatory..........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Checkout" name="04 verify postalcode field is mandatory" time="19.676">
+        <system-out><![CDATA[Given user is on login page.................................................passed
+And user input username with "standard_user"................................passed
+And user input password with "secret_sauce".................................passed
+And user click on login button..............................................passed
+Then user is on homepage....................................................passed
+And user add 1 product to the cart..........................................passed
+And user click on cart button...............................................passed
+Then user is on cartpage....................................................passed
+And user click on checkout button...........................................passed
+Then user is on identitypage................................................passed
+And user input firstname with "Andreanov"...................................passed
+And user input lastname with "Ridhovan".....................................passed
+And user input postalcode with ""...........................................passed
+When user click on continue button..........................................passed
+And user found error message postalcode is mandatory........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Checkout" name="05 verify all field is mandatory" time="19.521">
+        <system-out><![CDATA[Given user is on login page.................................................passed
+And user input username with "standard_user"................................passed
+And user input password with "secret_sauce".................................passed
+And user click on login button..............................................passed
+Then user is on homepage....................................................passed
+And user add 1 product to the cart..........................................passed
+And user click on cart button...............................................passed
+Then user is on cartpage....................................................passed
+And user click on checkout button...........................................passed
+Then user is on identitypage................................................passed
+And user input firstname with ""............................................passed
+And user input lastname with "".............................................passed
+And user input postalcode with ""...........................................passed
+When user click on continue button..........................................passed
+And user found error message all field is mandatory.........................passed
+]]></system-out>
+    </testcase>
+</testsuite>
