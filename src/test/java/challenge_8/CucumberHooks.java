@@ -5,7 +5,7 @@ import java.net.MalformedURLException;
 import io.cucumber.java.*;
 
 public class CucumberHooks {
-     @BeforeAll
+     @Before
      public static void beforeAll() throws MalformedURLException {
           System.out.println("before all");
      BaseTest.setup();
