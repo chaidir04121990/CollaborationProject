@@ -1,11 +1,11 @@
 package CH8.page;
 
-import CH8.Setup;
+import CH8.BaseTest;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
-public class loginPage extends Setup {
+public class loginPage extends BaseTest {
     @FindBy(xpath = "//android.widget.ScrollView[@content-desc=\"test-Login\"]/android.view.ViewGroup/android.widget.ImageView[1]")
     WebElement swagTitle;
     @FindBy(xpath = "//android.widget.EditText[@content-desc=\"test-Username\"]")

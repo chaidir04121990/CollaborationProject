@@ -10,16 +10,16 @@ public class CucumberHooks {
 
     @BeforeAll
     public static void beforeAll() throws MalformedURLException {
-        Setup.setupDriver();
+        BaseTest.setupDriver();
     }
 
     @AfterAll
     public static void afterAll() {
-        Setup.stopDriver();
+        BaseTest.stopDriver();
     }
 
     @After
     public static void after() {
-        Setup.resetApp();
+        BaseTest.resetApp();
     }
 }

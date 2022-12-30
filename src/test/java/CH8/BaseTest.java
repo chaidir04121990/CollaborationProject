@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class Setup {
+public class BaseTest {
 
     protected static AndroidDriver driver;
     protected static WebDriverWait wait;
@@ -32,6 +32,5 @@ public class Setup {
         driver.terminateApp("com.swaglabsmobileapp");
         driver.activateApp("com.swaglabsmobileapp");
     }
-
 }
 
