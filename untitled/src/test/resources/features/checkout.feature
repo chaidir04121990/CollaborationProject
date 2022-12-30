@@ -7,18 +7,21 @@ Feature: Checkout
     When User click Login button
     Then User is on homepage
 
-  Scenario: Checkout 2 different items
+  Scenario Outline: Checkout 2 different items
     And User able to see products in homepage
     When User add item 1 to cart
     And User add item 2 to cart
-    Then User click cart button
-    And User is on cart page
+    And User click cart button
+    Then User is on cart page
     When User click checkout button
     Then User is on checkout information page
-    And User input first name with "Lala"
-    And User input last name with "Lili"
-    And User input postal code with "12345"
+    And User input first name with <firstName>
+    And User input last name with <lastName>
+    And User input postal code with <postalCode>
     When User click continue button
     Then User is on checkout overview page
     When User click finish button
     Then User is on checkout complete page
+    Examples:
+      | firstName | lastName | postalCode |
+      | "Lala"    | "Lili"   | "12345"    |

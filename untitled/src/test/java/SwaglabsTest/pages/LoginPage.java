@@ -4,6 +4,7 @@ import SwaglabsTest.BaseTest;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPage extends BaseTest {
 
@@ -18,13 +19,13 @@ public class LoginPage extends BaseTest {
     By errorMessage = By.id("test-Error message");
 
     public By validateOnPage(){
-        System.out.println(wait);
-        System.out.println(usernameField);
-        System.out.println(passwordField);
-        System.out.println(loginButton);
-//        wait.until(ExpectedConditions.presenceOfElementLocated(usernameField));
-//        wait.until(ExpectedConditions.presenceOfElementLocated(passwordField));
-//        wait.until(ExpectedConditions.presenceOfElementLocated(loginButton));
+//        System.out.println(wait);
+//        System.out.println(usernameField);
+//        System.out.println(passwordField);
+//        System.out.println(loginButton);
+        wait.until(ExpectedConditions.presenceOfElementLocated(usernameField));
+        wait.until(ExpectedConditions.presenceOfElementLocated(passwordField));
+        wait.until(ExpectedConditions.presenceOfElementLocated(loginButton));
         return usernameField;
     }
 
