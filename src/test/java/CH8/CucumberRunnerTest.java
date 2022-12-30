@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = {"src/test/resources/features"},
-        glue = {"challenge_appium"},
+        glue = {"CH8"},
         plugin = {
                 "pretty",
                 "html:target/report-cucumber.html",

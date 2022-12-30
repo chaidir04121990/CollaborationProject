@@ -3,7 +3,6 @@ package CH8.page;
 import CH8.Setup;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 public class loginPage extends Setup {
